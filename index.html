@@ -4,175 +4,233 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Faro</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <style>
-        body {
-                font-family: 'Roboto', sans-serif;
-                background-color: #f5f5f5;
-                margin: 0;
-                padding: 0;
-            }
-        header {
-            text-align: center;
-            padding: 20px;
-        }
-
-            h1, h2, h3 {
-            font-weight: 700;
-        }
-
-    </style>
+    <!-- Incluir jQuery desde CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+    <!-- Sección superior de avisos -->
+    <div class="notification is-info">
+        <button class="delete"></button>
+        <strong>NewsLetter</strong> Suscribete a nuestro reporte semanal de las noticias mas relevantes
+    </div>
 
     <!-- Encabezado -->
-    <header>
-        <img src="el faro.jpg" alt="Logotipo de El Faro">
-        <h1>El Faro</h1>
-    </header>
+    <header class="navbar is-primary">
+        <div class="navbar-brand">
+          <a class="navbar-item">
+            <img src="el_faro.jpg" alt="Logotipo de El Faro" width="112" height="28">
+          </a>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div id="reloj" class="is-size-4 has-text-white"></div>
+          </div>
+        </div>
+      </header>
 
     <!-- Menú de navegación -->
-    <nav>
+   
+    <div class="tabs is-centered">
         <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#deporte">Deporte</a></li>
-            <li><a href="#negocios">Negocios</a></li>
+          <li class="is-active"><a href="#inicio">Inicio</a></li>
+          <li><a href="#deporte">Deporte</a></li>
+          <li><a href="#negocios">Negocios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
         </ul>
-    </nav>
+      </div>
+      
 
     <!-- Sección de Noticias Generales -->
-    <section id="inicio">
-        <h1>Noticias Generales</h1>
-        <table>
-               
-            <tr>
-                <td>
-                <h1>Fiestas patrias</h1>
-                <h3>Turismo</h3>
-                <p> Las celebraciones se extienden oficialmente desde el miércoles 18 al domingo 22 de septiembre, donde varias personas aprovecharán de salir de sus localidades. En Chile destaca Puerto Montt en las preferencias, mientras que a nivel internacional Brasil ha llamado mayoritariamente la atención de los viajeros.</p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <h1>Temblor en la capital</h1>
-                    <h3>Actualidad</h3>
-                    <p> Durante la presente jornada, se han registrado sismos de variada intensidad en distintos lugares del país.
-
-                        Sin embargo, la mayoría de los movimientos resultan imperceptibles, debido a que Chile se encuentra ubicado en el límite de las placas tectónicas de Nazca y Sudamericana, cuyos movimientos producen vibraciones de parte de la corteza terrestre.</p>
-                
-                </td>
-                
-            </tr>
-                <td>
-                    <h1>Patente</h1>
-                    <h3>Actualidad</h3>
-                    <p> Durante esta semana llega a su fin el plazo para pagar la última cuota del permiso de circulación, para quienes eligieron esa modalidad.
-
-                        El proceso 2024 del trámite comenzó el 1 de febrero y estuvo abierto hasta el 31 de marzo. Sin embargo, muchas personas eligen dividirlo en 2 cuotas debido al número de gastos que tienen muchas familias durante esa parte del año.</p>
-                </td>
-                   
-            </tr>
-           
-            
-            
-        </table>
-        <div>
-            <h2>Pago permisos de circulación (video)</h2>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/R0aeU0AOZw4?si=eF8sQjwfBRMsLirl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    
-        </div>
-        <div>
-            <audio controls>
-                <source src="ultimo-minuto-rcn.mp3" type="audio/mpeg">
-                 Tu navegador no soporta la etiqueta de audio.
-            </audio>
-        </div>
-        
-
+ 
       
-    </section>
+    <div class="seccion">
+        <h1 class="titulo-seccion">Noticias Generales</h1>
+        <section id="inicio">
+            <!-- Formulario para agregar artículos -->
+            <form id="formArticulos">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" required>
+                <label for="descripcion">Descripción:</label>
+                <input type="text" id="descripcion" required>
+                <button type="submit">Agregar artículo</button>
+            </form>
 
-    <!-- Sección de Deportes -->
-    <section id="deporte">
-        <h1>Deportes</h1>
-        <table>
-            <tr>
-                <td>
-                    <h1>Claudio bravo se retira del futbol</h1>
-                    <h3>El arquero se retira como una auténtica leyenda</h3>
-                    <p> Claudio Bravo, uno de los futbolistas chilenos más importantes de toda la historia, decidió ponerle fin a su aventura en el profesionalismo. Hoy, con 41 años, el portero anunció su retiro con un emotivo video en redes sociales</p>
-
-                    <a href=" https://www.emol.com/noticias/Deportes/2024/08/26/1140855/claudio-bravo-retiro-reacciones.html">Fuente Emol</a>
-
-                </td>
-                    
-            </tr>
-                <td>
-                    <h1>Wanderers fuera de liguilla por ahora: Así va la tabla de posiciones de la Primera B</h1>
-                    <h3>La clasificación sigue en movimiento.</h3>
-                    <p> La pelea por terminar segundo está al rojo vivo. ¿Por qué es tan importante? El equipo que termine en la segunda plaza jugará una final contra el ganador de la liguilla para determinar uno de los ascenso.</p>
-                </td>
-            <tr>
-                <td>
-                    <h1>Alejandro Tabilo se traza ambiciosa meta y explica el gran impacto que ha tenido su nuevo coach</h1>
-                    <h3>"Jano" debuta este martes en el US Open.</h3>
-                    <p> Alejandro Tabilo ha tenido una temporada sensacional este 2024. Partió fuera de los cien mejores del ranking y actualmente está en el puesto 21 siendo el latino mejor posicionado. Ganó, además, títulos en Auckland y en Mallorca y consiguió una espectacular victoria contra Novak Djokovic en el Masters de Roma. Este martes, "Jano" hará su debut en el US Open frente a David Goffin y en la previa del duelo con el belga habló sobre su rendimiento este año. NOTICIAS RELACIONADAS Ranking ATP: Tabilo sube, un chileno da un tremendo salto y cómo está el top ten Cuándo y a qué hora es el debut de Tabilo y Jarry en el US Open, sus rivales y quién transmite los partidos 7 "Este año ha sido increíble. Nunca hubiera podido soñar que iba a estar Top 20 este año. Pero un próximo objetivo en el ranking para el resto de año, quedando muy pocos torneos, podría ser el Top 15, que sería extraordinario para mí, y apuntándole a los diez mejores", dijo el tenista de 27 años en una entrevista que dio a la página oficial de la ATP. Hasta ahora, solo cinco chilenos han logrado posicionarse entre los 15 mejores del ranking. Lo lograron Marcelo Ríos, Fernando González, Nicolás Massú, Hans Gildemeister y Jaime Fillol.
-
-                    </p>
-                </td>
-            </tr>
-            
-                
-        
-            
-        </table>
-    </section>
-
-    <!-- Sección de Negocios -->
-    <section id="negocios">
-        <h1>Noticias de Negocios</h1>
-        <table>
-            
-            
-            <tr>
-                <td>
-                    <h1>Tarifas eléctricas: Gobierno ingresará hoy proyecto para aumentar subsidio e incorporará alza de multas por cortes</h1>
-                    <h3>La iniciativa busca triplicar el número de familias que acceden al subsidio eléctrico, llegando así a 4,7 millones de hogares.</h3>
-                    <p> El ministro de Energía, Diego Pardow, anunció esta tarde que el Gobierno ingresará hoy el proyecto de ley que busca triplicar el número de familias que accedan al subsidio eléctrico, llegando así a 4,7 millones de hogares o 10 millones de personas. "El objetivo de este proyecto es triplicar la cobertura de subsidio, entendiendo que el calendario de estabilización es el que está en la ley vigente", dijo el titular de la cartera. NOTICIAS RELACIONADAS Nueva alza eléctrica en octubre pone presión: ¿En qué está la discusión para aumentar el subsidio? Déjà vu: Más de 12 mil clientes amanecen sin energía eléctrica en la RM La iniciativa se enmarca en la brusca alza que están sufriendo las cuentas de la luz. Esto, tras el descongelamiento de las tarifas, que se mantenía desde 2019, y que elevará las cuentas hasta en un 60% para algunos sectores. "La idea es darnos el mes de septiembre para la discusión en la Cámara y a partir de octubre la tramitación en el Senado. Esa es la planificación original", señaló Pardow. El secretario de Estado también reconoció que se trata de una iniciativa que ha tenido voces críticas en medio del debate que ha tenido en la mesa técnica conformada para confeccionar este proyecto, por lo que "es importante escucharlos a ellos (a los críticos)". Es que las dudas han estado, principalmente, en el financiamiento del subsidio. Esto, porque la idea del Ejecutivo era sacar los recursos de un aporte fiscal con cargo al IVA, un aumento de las tarifas a los consumidores industriales y un aumento temporal al impuesto al carbono, lo que no cayó bien en el sector privado.
-
-                    </p>
-                </td>
-                    
-
-            </tr>
-            <tr>
-                <td>
-                    <h1>Mercado Libre denuncia a principales bancos de Argentina por "concentración prohibida y cartelización"</h1>
-                    <h3>Desde la banca, en tanto, respondieron a la empresa fundada por Marcos Galperin y la acusan de ser un "monopolio".</h3>
-                    <p> LLa empresa Mercado Libre denunció ante la Comisión Nacional de Defensa de la Competencia (CNDC) de Argentina a los principales bancos del país por "concentración prohibida, cartelización y prácticas coordinadas" destinadas a perjudicar a la industria 'fintech' y sus usuarios, según difundió este lunes la compañía. Para el gigante argentino de comercio electrónico y servicios financieros digitales, "los bancos se concentran" en la aplicación de pagos digitales Modo, "en lugar de competir entre sí, limitando a los usuarios las posibilidades de elegir libremente dónde operar su dinero y dificultando las transferencias". Marcos Galperin, fundador de Mercado Libre: "Chile es por lejos donde más hemos crecido en últimos cinco años" 41 "Había que hacerlo": Mercado Libre se dispara 10% en la bolsa y se corona como la firma más valiosa de Latinoamérica 68 Este es un capítulo más en la puja entre los bancos y Mercado Libre, que, a través de su 'fintech' Mercado Pago, compite con las entidades bancarias por la captación del dinero y las transacciones de los usuarios y en las regulaciones que facilitan o perjudican las operaciones de ambas formas de pago
-                    </p>
-                </td>
-                    
-            </tr>
-            <tr>
-                <td>
-                    <h1>Cancelan decenas de vuelos en Colombia por falta de gasolina: Petro responsabiliza a filial de la chilena Copec</h1>
-                    <h3>Latam canceló este lunes 36 vuelos y varias aerolíneas han emitido alertas similares producto de la esasez de combustible..</h3>
-                    <p> La aerolínea de capitales chilenos Latam canceló este lunes 36 vuelos agendados para mañana en Colombia y varias aerolíneas han emitido alertas similares ante la escasez de gasolina en diferentes terminales del país. La medida de emergencia obedece a "las restricciones de abastecimiento de combustible de aviación Jet A1 en algunos aeropuertos" luego de una falla en una refinería, indicó Latam en un comunicado. Abastible aterrizará en Europa: Empresas Copec compra negocio de gas licuado a gigante española "Lipiandes": Empresas Lipigas cambia de nombre para agrupar sus negocios en Chile, Perú y Colombia Avianca, la mayor aerolínea colombiana, acusó horas antes "preocupación" por la "restricción inmediata en el abastecimiento de algunos aeropuertos" y anticipó "ajustes en itinerarios", sin precisar cuántos vuelos se verán afectados. En la plataforma Flightaware aparecen cancelados los vuelos internacionales de Avianca programados para este lunes desde Bogotá hacia Sao Paulo, Santiago de Chile, Ciudad de México y Cancún.
-                        
-
-                    </p>
-                </td>
-                    
-         </tr>
-            
-                
+            <!-- Contador de artículos -->
+            <p>Artículos en total: <span id="contadorArticulos">3</span></p>
            
-            
-        </table>
+
+            <table id="listaArticulos">
+                <tr>
+                    <td>
+                        <h1 class="titulo">Fiestas patrias</h1>
+                        <div class="descripcion">
+                            <h3>Turismo</h3>
+                            <p>Las celebraciones se extienden desde el miércoles 18 al domingo 22 de septiembre...</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1 class="titulo">Temblor en la capital</h1>
+                        <div class="descripcion">
+                            <h3>Actualidad</h3>
+                            <p>Durante la presente jornada, se han registrado sismos de variada intensidad...</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1 class="titulo">Patente</h1>
+                        <div class="descripcion">
+                            <h3>Actualidad</h3>
+                            <p>Durante esta semana llega a su fin el plazo para pagar la última cuota del permiso...</p>
+                            <h2>Pago permisos de circulación (video)</h2>
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/R0aeU0AOZw4?si=eF8sQjwfBRMsLirl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    
+                        </div>
+                    
+                    </td>
+                </tr>
+            </table>
+        </section>
+    </div>
+    <div class="seccion">
+    </div>
+        <h1 class="titulo-seccion">Deportes</h1>
+        <section id="deporte">
+            <!-- Formulario para agregar artículos -->
+            <form id="formArticulos">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" required>
+                <label for="descripcion">Descripción:</label>
+                <input type="text" id="descripcion" required>
+                <button type="submit">Agregar artículo</button>
+            </form>
+
+            <!-- Contador de artículos -->
+            <p>Artículos en total: <span id="contadorArticulos">3</span></p>
+
+            <table id="listaArticulos">
+                <tr>
+                    <td>
+                        <h1 class="titulo">Claudio bravo se retira del futbol</h1>
+                        <div class="descripcion">
+                            <h3>El arquero se retira como una auténtica leyenda</h3>
+                            <p>Claudio Bravo, uno de los futbolistas chilenos más importantes de toda la historia, decidió ponerle fin a su aventura en el profesionalismo. Hoy, con 41 años, el portero anunció su retiro con un emotivo video en redes sociales</p>
+                            <a href=" https://www.emol.com/noticias/Deportes/2024/08/26/1140855/claudio-bravo-retiro-reacciones.html">Fuente Emol</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1 class="titulo">Wanderers fuera de liguilla por ahora: Así va la tabla de posiciones de la Primera B</h1>
+                        <div class="descripcion">
+                            <h3>La clasificación sigue en movimiento.</h3>
+                            <p>La pelea por terminar segundo está al rojo vivo. ¿Por qué es tan importante? El equipo que termine en la segunda plaza jugará una final contra el ganador de la liguilla para determi...</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1 class="titulo">Alejandro Tabilo se traza ambiciosa meta y explica el gran impacto que ha tenido su nuevo coach</h1>
+                        <div class="descripcion">
+                            <h3>"Jano" debuta este martes en el US Open.</h3>
+                            <p>Alejandro Tabilo ha tenido una temporada sensacional este 2024. Partió fuera de los cien mejores del ranking y actualmente está en el puesto 21 siendo el latino mejor posicionado. Ganó, además, títulos en Auckland y en Mallorca y consiguió una espectacular victoria contra Novak Djokovic en el Masters de Roma. Este martes, "Jano" hará su debut en el US Open frente a David Goffin y en la previa del duelo con el belga habló sobre su rendimiento este año. NOTICIAS RELACIONADAS Ranking ATP: Tabilo sube, un chileno da un tremendo salto y cómo está el top ten Cuándo y a qué hora es el debut de Tabilo y Jarry en el US Open, sus rivales y quién transmite los partidos 7 "Este año ha sido increíble. Nunca hubiera podido soñar que iba a estar Top 20 este año. Pero un próximo objetivo en el ranking para el resto de año, quedando muy pocos torneos, podría ser el Top 15, que sería extraordinario para mí, y apuntándole a los diez mejores", dijo el tenista de 27 años en una entrevista que dio a la página oficial de la ATP. Hasta ahora, solo cinco chilenos han logrado posicionarse entre los 15 mejores del ranking. Lo lograron Marcelo Ríos, Fernando González, Nicolás Massú, Hans Gildemeister y Jaime Fillol</p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </section>
+    </div>
+    
+      
+    <div class="seccion"></div>
+        <h1 class="titulo-seccion">Negocios</h1>
+        <section id="negocios">
+            <!-- Formulario para agregar artículos -->
+            <form id="formArticulos">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" required>
+                <label for="descripcion">Descripción:</label>
+                <input type="text" id="descripcion" required>
+                <button type="submit">Agregar artículo</button>
+            </form>
+
+            <!-- Contador de artículos -->
+            <p>Artículos en total: <span id="contadorArticulos">3</span></p>
+
+            <table id="listaArticulos">
+                <tr>
+                    <td>
+                        <h1 class="titulo">Tarifas eléctricas: Gobierno ingresará hoy proyecto para aumentar subsidio e incorporará alza de multas por cortes</h1>
+                        <div class="descripcion">
+                            <h3>La iniciativa busca triplicar el número de familias que acceden al subsidio eléctrico, llegando así a 4,7 millones de hogares.</h3>
+                            <p>El ministro de Energía, Diego Pardow, anunció esta tarde que el Gobierno ingresará hoy el proyecto de ley que busca triplicar el número de familias que accedan al subsidio eléctrico...</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1 class="titulo">Mercado Libre denuncia a principales bancos de Argentina por "concentración prohibida y cartelización</h1>
+                        <div class="descripcion">
+                            <h3>Desde la banca, en tanto, respondieron a la empresa fundada por Marcos Galperin y la acusan de ser un "monopolio".</h3>
+                            <p>La empresa Mercado Libre denunció ante la Comisión Nacional de Defensa de la Competencia (CNDC) de Argentina a los principales bancos del país por "concentración prohibida, cartelización y prácticas coordinadas" destinadas a perjudicar a la industria 'fintech' y sus usuarios, según difundió este lunes la compañía. Para el gigante argentino de comercio electrónico y servicios financieros digitales, "los bancos se concentran" en la aplicación de pagos digitales Modo, "en lugar de competir entre sí, limitando a los usuarios las posibilidades de elegir libremente dónde operar su dinero y dificultando las transferencias". Marcos Galperin, fundador de Mercado Libre: "Chile es por lejos donde más hemos crecido en últimos cinco años" 41 "Había que hacerlo": Mercado Libre se dispara 10% en la bolsa y se corona como la firma más valiosa de Latinoamérica 68 Este es un capítulo más en la puja entre los bancos y Mercado Libre, que, a través de su 'fintech' Mercado Pago, compite con las entidades bancarias por la captación del dinero y las transacciones de los usuarios y en las regulaciones que facilitan o perjudican las operaciones de ambas formas...</p>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1 class="titulo">Cancelan decenas de vuelos en Colombia por falta de gasolina: Petro responsabiliza a filial de la chilena Copec</h1>
+                        <div class="descripcion">
+                            <h3>Latam canceló este lunes 36 vuelos y varias aerolíneas han emitido alertas similares producto de la esasez de combustible</h3>
+                            <p>La aerolínea de capitales chilenos Latam canceló este lunes 36 vuelos agendados para mañana en Colombia y varias aerolíneas han emitido alertas similares ante la escasez de gasolina en diferentes terminales del país</p>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </section>
+    </div>
+
+  
+
+<!-- Sección de Contacto -->
+<div class="seccion">
+    <h2 class="titulo-seccion">Contacto</h2>
+    <section id="contacto">
+        <form id="formContacto">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
     </section>
+</div>
+
+   
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 El Faro. Todos los derechos reservados.</p>
+        <footer class="footer">
+  <div class="content has-text-centered">
+   
+    <p>Síguenos en redes sociales:</p>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+  </div>
+</footer>
+    </footer>
+
+     
+    <!-- Vinculo al archivo JavaScript -->
+    <script src="script.js"></script>
 
 </body>
 </html>
