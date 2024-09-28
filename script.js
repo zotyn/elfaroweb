@@ -1,17 +1,37 @@
 // Reloj en tiempo real
+/*
 function actualizarReloj() {
     const ahora = new Date();
     const tiempo = ahora.toLocaleTimeString();
     $('#reloj').text(tiempo);
 }
+setInterval(actualizarReloj, 1000);*/
+
+function actualizarReloj() {
+    const ahora = new Date();
+
+    // Opciones para mostrar el día de la semana, día, mes y año
+    const opcionesFecha = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+    // Obtener la fecha en formato "Viernes, 28 de septiembre de 2024"
+    const fecha = ahora.toLocaleDateString('es-ES', opcionesFecha);
+
+    // Obtener la hora
+    const tiempo = ahora.toLocaleTimeString();
+
+    // Actualizar el contenido del elemento con el ID 'reloj'
+    $('#reloj').text(`${fecha} ${tiempo}`);
+}
+
+// Actualizar cada segundo
 setInterval(actualizarReloj, 1000);
 
 // Agregar artículos dinámicamente
-const formArticulos = $('#formArticulos');
+/*const formArticulos = $('#formArticulos');
 const listaArticulos = $('#listaArticulos');
-const contadorArticulos = $('#contadorArticulos');
+const contadorArticulos = $('#contadorArticulos');*/
 
-formArticulos.on('submit', function (e) {
+/*formArticulos.on('submit', function (e) {
     e.preventDefault();
     const titulo = $('#titulo').val();
     const descripcion = $('#descripcion').val();
@@ -28,7 +48,7 @@ formArticulos.on('submit', function (e) {
 
     // Añadir funcionalidad de desplegar
     añadirFuncionalidadDesplegar();
-});
+});*/
 
 // Formulario de contacto
 const formContacto = $('#formContacto');
@@ -46,9 +66,9 @@ function añadirFuncionalidadDesplegar() {
 }
 
 // Inicializar la funcionalidad para los artículos existentes
-añadirFuncionalidadDesplegar();
+//añadirFuncionalidadDesplegar();
 
 // Función para mostrar/ocultar secciones enteras
-$('.titulo-seccion').on('click', function () {
+/*$('.titulo-seccion').on('click', function () {
     $(this).next('section').stop(true, true).slideToggle(400);
-});
+});*/

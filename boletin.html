@@ -23,20 +23,19 @@
         </a>   
     </div>
     
-    
 
     <header class="navbar is-primary">
             <div class="container is-flex is-flex-direction-column is-align-items-center">
-         
+            <!-- Logo arriba -->
             <div class="navbar-brand">
                 <a class="navbar-item" href="index.html">
-                <img src="EL FARO_transparent-.png" 
+                <img src="C:/Users/Javier/Desktop/gpt/EL FARO_transparent-.png" 
                 alt="Logotipo de El Faro" 
                 class="is-fullwidth" 
                 style="max-height: 300px;">
                 </a>
             </div>
-            
+            <!-- Reloj abajo -->
             <div class="navbar-item">
                 <div id="reloj" class="is-size-5 has-text-white"></div>
             </div>
@@ -50,34 +49,46 @@
         <ul>
             <li class="is-active"><a href="index.html">Inicio</a></li>
             <li><a href="Deportes.html">Deporte</a></li>
-            <li><a href="negocios.html">Negocios</a></li>
+            <li><a href="index.html#negocios">Negocios</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
+    <section id="suscripcion" class="section">
+        <div class="container">
+            <h2 class="title">Suscríbete a nuestro boletín</h2>
+            <form>
+                <div class="field">
+                    <label class="label" for="nombre">Nombre:</label>
+                    <div class="control">
+                        <input class="input" type="text" id="nombre" placeholder="Ingresa tu nombre" required>
+                    </div>
+                </div>
     
-
-    <section id="deporte" class="section">
-        <div id=generales1  class="container">
-            <h1 class="title">Fiestas Patrias</h1>
-            <div class="columns is-vcentered">
-                <div class="column">
-                    <h2 class="title is-5">Expectación por feriado XL</h2>
-                    <p>Desde la Federación de Empresas de Turismo de Chile (Fedetur), la presidenta ejecutiva, Mónica Zalaquett, dijo a Emol que "el hecho de que personas se podrían tomar entre 6 a 10 días es una gran oportunidad para la industria turística nacional, ya que esto va a significar que -sobre todo desde la RM- un grupo importante de personas va a viajar por Chile". En cuanto a sus expectativas, indicó que regiones como La Araucanía, La Serena, Valparaíso y Maule "como siempre han sido bastante atractivos", pero también "hemos visto que este incremento en los días ha generado que personas elijan viajar a lugares más alejados. Dado que es tan largo, se puede dar que vayan a lugares que uno normalmente no visita por tres días", agregando que estos días podrían generar que el turismo este "más distribuido por todo Chile". Así, explicó que si bien esperan que una gran cantidad de personas viajen al exterior, teniendo como principales destinos Miami, Orlando y Punta Cana, "al no estar la situación económica boyante, no va a ser una locura mayor a los años anteriores". La gran temporada de nieve que están teniendo los centros de esquí también se suman como un beneficio, aseguró, concluyendo que "es un panorama súper prometedor. Es una gran oportunidad para la industria. Después de varios años bien duros, este largo feriado va a significar un puntalazo (sic) importante". Desde la Asociación Chilena de Gastronomía (Achiga), su presidente, Máximo Picallo, también conversó con Emol. "Efectivamente, estas Fiestas Patrias serán prácticamente una semana de celebración. Esto significa que para muchos restaurantes, sobre todos los que se ubican en lugares turísticos a donde las personas seguramente viajarán esos días, que tendrán un buen desempeño", manifestó. 
+                <div class="field">
+                    <label class="label" for="email">Correo electrónico:</label>
+                    <div class="control">
+                        <input class="input" type="email" id="email" placeholder="Ingresa tu correo electrónico" required>
+                    </div>
                 </div>
-                <div class="column is-one-third">
-                    <figure class="image is-16by9">
-                        <iframe class="has-ratio" width="560" height="315" src="https://www.youtube.com/embed/mL8EnlqchWg?si=283DMp-8bJOZKYId" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </figure>
+    
+                <div class="field">
+                    <div class="control">
+                        <label class="checkbox">
+                            <input type="checkbox" required>
+                            Acepto los <a href="#">términos y condiciones</a>
+                        </label>
+                    </div>
                 </div>
-                
+    
+                <div class="control">
+                    <button class="button is-primary" type="submit">Suscribirse</button>
                 </div>
-            </div>
+            </form>
         </div>
     </section>
+    
 
-
- 
-
+    
     <!-- Sección de Contacto -->
     <section id="contacto" class="section">
         <div class="container">
